@@ -11,6 +11,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        Move();
+
+        Crouch();
+    }
+
+    private void Move()
+    {
         float xDirection = Input.GetAxis("Horizontal");
         float zDirection = Input.GetAxis("Vertical");
 
@@ -29,7 +36,10 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("Move", false);
         }
+    }
 
+    private void Crouch()
+    {
         if(Input.GetKey(KeyCode.LeftControl))
         {
             anim.SetBool("Crouched", true);

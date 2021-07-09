@@ -29,5 +29,14 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("Move", false);
         }
+
+        if(Input.GetKey(KeyCode.LeftControl))
+        {
+            anim.SetBool("Crouched", true);
+        }
+        else
+        {
+            anim.SetBool("Crouched", false);
+        }
     }
 }

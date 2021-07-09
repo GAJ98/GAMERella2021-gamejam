@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] public float speed = 0.1f;
+    [SerializeField] private Animator anim;
     private Vector3 prevMove = Vector3.zero;
 
     private void Update()
@@ -22,6 +23,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.S)||Input.GetKey(KeyCode.D))
         {
             transform.rotation = Quaternion.LookRotation(moveDirection);
+            anim.SetBool("Move", true);
+        }
+        else
+        {
+            anim.SetBool("Move", false);
         }
     }
 }

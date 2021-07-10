@@ -9,18 +9,24 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float crouchSpeed = 1.3f;
     [SerializeField] public float runSpeed = 1.3f;
     [SerializeField] public float jumpForce = 10f;
+    [SerializeField] public float crouchColliderHeight = 0.75f;
+    [SerializeField] public Vector3 crouchColliderCentre = Vector3.zero;
     [SerializeField] private Animator anim;
     [SerializeField] private LayerMask groundLayer;
+    private float colliderHeight;
+    private Vector3 colliderCenter;
     private float speed;
     private Vector3 prevMove = Vector3.zero;
     private Rigidbody rb;
-    private Collider capsuleCollider;
+    private CapsuleCollider capsuleCollider;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        capsuleCollider = GetComponent<Collider>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
         speed = walkSpeed;
+        colliderHeight = capsuleCollider.height;
+        colliderCenter = capsuleCollider.center;
     }
 
     private void Update()
@@ -58,11 +64,15 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("Crouched", true);
             speed = crouchSpeed;
+            capsuleCollider.height = crouchColliderHeight;
+            capsuleCollider.center = crouchColliderCentre;
         }
         else
         {
             anim.SetBool("Crouched", false);
             speed = walkSpeed;
+            capsuleCollider.height = colliderHeight;
+            capsuleCollider.center = colliderCenter;
         }
     }
 

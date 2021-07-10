@@ -18,17 +18,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        float xDirection = Input.GetAxis("Horizontal");
-        float zDirection = Input.GetAxis("Vertical");
-
-        Vector3 moveDirection = new Vector3(xDirection, 0.0f, zDirection);
         
-        Debug.Log(moveDirection);
-
-        transform.position = transform.position + (moveDirection * (speed * Time.deltaTime));
 
         if (Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.S)||Input.GetKey(KeyCode.D))
         {
+            float xDirection = Input.GetAxis("Horizontal");
+            float zDirection = Input.GetAxis("Vertical");
+
+            Vector3 moveDirection = new Vector3(xDirection, 0.0f, zDirection);
+        
+            Debug.Log(moveDirection);
+
+            transform.position = transform.position + (moveDirection * (speed * Time.deltaTime));
+            
             transform.rotation = Quaternion.LookRotation(moveDirection);
             anim.SetBool("Move", true);
         }

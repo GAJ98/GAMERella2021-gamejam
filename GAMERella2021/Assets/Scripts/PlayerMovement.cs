@@ -91,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics.CapsuleCast(capsuleCollider.bounds.center, capsuleCollider.bounds.size, 0f,
-            Vector3.down, 1f, groundLayer);
+        return Physics.CapsuleCast(capsuleCollider.bounds.center, capsuleCollider.bounds.size, 1f,
+            Vector3.down, 2f, groundLayer);
     }
 }

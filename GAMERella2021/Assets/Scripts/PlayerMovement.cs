@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float crouchSpeed = 1.3f;
     [SerializeField] public float runSpeed = 1.3f;
     [SerializeField] public float jumpForce = 10f;
+    [SerializeField] public float jumpTime = 3f;
     [SerializeField] public float crouchColliderHeight = 0.75f;
     [SerializeField] public Vector3 crouchColliderCentre = Vector3.zero;
     [SerializeField] private Animator anim;
@@ -19,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 prevMove = Vector3.zero;
     private Rigidbody rb;
     private CapsuleCollider capsuleCollider;
+    private int jumpHash = Animator.StringToHash("Jump");
+    private bool hasJumped;
+    private float timer;
 
     private void Awake()
     {
@@ -27,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
         speed = walkSpeed;
         colliderHeight = capsuleCollider.height;
         colliderCenter = capsuleCollider.center;
+        hasJumped = false;
+        timer = 0f;
     }
 
     private void Update()
@@ -34,6 +40,21 @@ public class PlayerMovement : MonoBehaviour
         Move();
         Crouch();
         Jump();
+
+        if (hasJumped)
+        {
+            capsuleCollider.center = new Vector3(0f, anim.GetFloat("JumpCenter"), 0f);
+            capsuleCollider.height = anim.GetFloat("JumpHeight");
+            rb.useGravity = false;
+            timer = timer + Time.deltaTime;
+        }
+
+        if (timer > jumpTime)
+        {
+            hasJumped = false;
+            timer = 0f;
+            rb.useGravity = true;
+        }
     }
 
     private void Move()
@@ -80,8 +101,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(Vector3.up * jumpForce);
-            anim.SetBool("Jump", true);
+            rb.velocity = Vector3.up * jumpForce; 
+            anim.SetTrigger(jumpHash);
+            hasJumped = true;
+            timer = 0f;
+            capsuleCollider.center = new Vector3(0f, anim.GetFloat("JumpCenter"), 0f);
+            capsuleCollider.height = anim.GetFloat("JumpHeight");
         }
         else
         {
@@ -91,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics.CapsuleCast(capsuleCollider.bounds.center, capsuleCollider.bounds.size, 1f,
-            Vector3.down, 2f, groundLayer);
+        return Physics.CapsuleCast(capsuleCollider.bounds.center, capsuleCollider.bounds.size, 0f,
+            Vector3.down, 1f, groundLayer);
     }
 }

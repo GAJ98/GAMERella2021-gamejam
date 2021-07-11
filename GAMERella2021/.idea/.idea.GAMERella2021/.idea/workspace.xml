@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7523b59c-61d5-40c7-b5b6-eeb3fa12033f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GAMERella2021/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GAMERella2021/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/Ch46.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/Ch46.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/Materials/Ch46_body.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/Materials/Ch46_body.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlayerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlayerScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
     </list>

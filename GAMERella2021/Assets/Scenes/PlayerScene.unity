@@ -224,7 +224,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20264
+  m_Name: pb_Mesh38788
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6269,7 +6269,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20252
+  m_Name: pb_Mesh38776
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6661,12 +6661,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671663004}
-  m_LocalRotation: {x: -0.13178639, y: 0.029943645, z: -0.0064493082, w: -0.9908048}
-  m_LocalPosition: {x: 0.6525678, y: 2.5913491, z: -5.1678944}
+  m_LocalRotation: {x: -0.11404163, y: 0.0034142102, z: -0.0046716766, w: -0.9934591}
+  m_LocalPosition: {x: -0.27460474, y: 2.3712292, z: -4.496627}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 30.897, y: -20.993, z: 0.159}
 --- !u!114 &1671663008
 MonoBehaviour:
@@ -6717,7 +6717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4290244920545935721, guid: 3a430ab32973ed64496739f403656156, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4290244920545935721, guid: 3a430ab32973ed64496739f403656156, type: 3}
       propertyPath: m_LocalScale.x
@@ -6783,6 +6783,10 @@ PrefabInstance:
     - target: {fileID: 7354076413481845829, guid: 56b52e7e6c48f014d9ca75c203a49a36, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354076413481845849, guid: 56b52e7e6c48f014d9ca75c203a49a36, type: 3}
+      propertyPath: jumpForce
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 7354076413481845849, guid: 56b52e7e6c48f014d9ca75c203a49a36, type: 3}
       propertyPath: jumpVelocity

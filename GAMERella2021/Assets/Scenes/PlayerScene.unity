@@ -224,7 +224,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39054
+  m_Name: pb_Mesh58672
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6269,7 +6269,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39042
+  m_Name: pb_Mesh58660
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6883,6 +6883,10 @@ PrefabInstance:
     - target: {fileID: 7354076413481845849, guid: 56b52e7e6c48f014d9ca75c203a49a36, type: 3}
       propertyPath: jumpTime
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354076413481845849, guid: 56b52e7e6c48f014d9ca75c203a49a36, type: 3}
+      propertyPath: runSpeed
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 7354076413481845849, guid: 56b52e7e6c48f014d9ca75c203a49a36, type: 3}
       propertyPath: jumpForce

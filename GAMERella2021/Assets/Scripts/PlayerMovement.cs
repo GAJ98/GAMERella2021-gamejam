@@ -68,10 +68,20 @@ public class PlayerMovement : MonoBehaviour
         
             Debug.Log(moveDirection);
 
-            transform.position = transform.position + (moveDirection * (speed * Time.deltaTime));
-            
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                transform.position = transform.position + (moveDirection * (runSpeed * Time.deltaTime));
+                anim.SetBool("Run", true);
+            }
+            else
+            {
+                anim.SetBool("Run", false);
+                transform.position = transform.position + (moveDirection * (speed * Time.deltaTime));
+                anim.SetBool("Move", true);
+            }
+
             transform.rotation = Quaternion.LookRotation(moveDirection);
-            anim.SetBool("Move", true);
+            
         }
         else
         {

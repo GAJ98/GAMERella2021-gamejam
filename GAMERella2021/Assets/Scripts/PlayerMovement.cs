@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float crouchSpeed = 1.3f;
     [SerializeField] public float runSpeed = 1.3f;
     [SerializeField] public float jumpForce = 10f;
+    [SerializeField] public float superJumpForce = 10f;
     [SerializeField] public float jumpTime = 3f;
     [SerializeField] public float crouchColliderHeight = 0.75f;
     [SerializeField] public Vector3 crouchColliderCentre = Vector3.zero;
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private int jumpHash = Animator.StringToHash("Jump");
     private bool hasJumped;
     private float timer;
+    private bool hasHitDisco;
 
     private void Awake()
     {
@@ -33,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         colliderCenter = capsuleCollider.center;
         hasJumped = false;
         timer = 0f;
+        hasHitDisco = false;
     }
 
     private void Update()
@@ -66,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
             Vector3 moveDirection = new Vector3(xDirection, 0.0f, zDirection);
         
-            Debug.Log(moveDirection);
+            //Debug.Log(moveDirection);
 
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -111,12 +114,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = Vector3.up * jumpForce; 
+            if (hasHitDisco)
+            {
+                rb.velocity = Vector3.up * superJumpForce;
+            }
+            else
+            {
+                rb.velocity = Vector3.up * jumpForce;
+            }
             anim.SetTrigger(jumpHash);
             hasJumped = true;
             timer = 0f;
             capsuleCollider.center = new Vector3(0f, anim.GetFloat("JumpCenter"), 0f);
             capsuleCollider.height = anim.GetFloat("JumpHeight");
+            hasHitDisco = false;
         }
         else
         {
@@ -128,5 +139,14 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics.CapsuleCast(capsuleCollider.bounds.center, capsuleCollider.bounds.size, 0f,
             Vector3.down, 1f, groundLayer);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.CompareTag("discoball"))
+        {
+            Debug.Log("Hit disco");
+            hasHitDisco = true;
+        }
     }
 }

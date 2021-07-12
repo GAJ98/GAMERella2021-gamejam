@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7523b59c-61d5-40c7-b5b6-eeb3fa12033f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GAMERella2021/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GAMERella2021/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GAMERella2021/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GAMERella2021/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlayerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlayerScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/disco-ball-animated/source/Textures/disco_normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/disco-ball-animated/source/Textures/disco_normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/disco-ball-animated/source/Textures/spaces_normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/disco-ball-animated/source/Textures/spaces_normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/disco-ball-animated/source/disco.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/disco-ball-animated/source/disco.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +69,7 @@
       <workItem from="1625816590837" duration="4994000" />
       <workItem from="1625870777270" duration="1696000" />
       <workItem from="1625898450691" duration="5595000" />
-      <workItem from="1626027685239" duration="4491000" />
+      <workItem from="1626027685239" duration="5876000" />
     </task>
     <servers />
   </component>

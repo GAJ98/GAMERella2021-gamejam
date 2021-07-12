@@ -16,6 +16,7 @@
           <e p="readme.txt" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="Parallax.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
           <e p="SimpleCameraController.cs" t="Include" />
         </e>
